@@ -1,1 +1,4 @@
+# includes database configuration information
 config.js
+# imported node modules
+node_modules
