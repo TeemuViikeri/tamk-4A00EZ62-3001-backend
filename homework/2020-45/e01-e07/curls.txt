@@ -1,0 +1,7 @@
+curl http://localhost:8080/locations
+
+curl http://localhost:8080/locations/1
+
+curl -H "Content-type: application/json" -d "{\"latitude\": 60, \"longitude\": 60}" http://localhost:8080/locations
+
+curl -X DELETE http://localhost:8080/locations/1

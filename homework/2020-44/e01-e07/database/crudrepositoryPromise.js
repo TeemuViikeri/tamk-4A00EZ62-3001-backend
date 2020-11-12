@@ -109,7 +109,7 @@ const connectionFunctions = {
           resolve(result);
         });
       } else {
-        reject(idValidation.errors);
+        reject(new Error("Id value is not valid [value > 0]."));
       }
     }),
 
