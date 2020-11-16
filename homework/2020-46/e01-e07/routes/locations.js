@@ -1,6 +1,7 @@
 const express = require("express");
+var cors = require("cors");
 const Location = require("../models/location.js");
-const database = require("../database/crudrepositoryPromise");
+const database = require("../database/crudrepository");
 
 var Validator = require("jsonschema").Validator;
 var v = new Validator();
@@ -18,8 +19,6 @@ router.get("/:locationId([0-9]+)", async (req, res) => {
   const paramId = Number(req.params.locationId);
 
   const l = await database.findById(paramId);
-
-  console.log(res.msg);
 
   if (l.length === 0) {
     res.status(404).send("Can't find a location with the given id.");
